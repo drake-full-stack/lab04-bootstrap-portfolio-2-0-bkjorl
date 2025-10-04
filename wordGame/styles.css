@@ -1,0 +1,173 @@
+/* WORDLE CSS - Complete Lab02 Foundation + Testing Area */
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    max-width: 500px;
+    width: 100%;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid #d3d6da;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.tile {
+    width: 62px;
+    height: 62px;
+    border: 2px solid #d3d6da;
+    background-color: #ffffff;
+    
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    transition: all 0.15s ease;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tile states */
+.tile.filled {
+    border-color: #565758;
+    animation: pop 0.1s ease-in-out;
+}
+
+.tile.correct {
+    background-color: #6aaa64;
+    border-color: #6aaa64;
+    color: white;
+}
+
+.tile.present {
+    background-color: #c9b458;
+    border-color: #c9b458;
+    color: white;
+}
+
+.tile.absent {
+    background-color: #787c7e;
+    border-color: #787c7e;
+    color: white;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Testing Area Styles */
+.testing-area {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.testing-area h3 {
+    margin-top: 0;
+    color: #495057;
+    text-align: center;
+}
+
+#debug-output {
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 15px;
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.testing-area button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.testing-area button:hover {
+    background-color: #5a6268;
+}
+
+.debug-entry {
+    margin: 5px 0;
+    padding: 5px 8px;
+    border-left: 3px solid #007bff;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+    animation: slideIn 0.3s ease;
+}
+
+.debug-entry.success {
+    border-left-color: #28a745;
+    background-color: #d4edda;
+}
+
+.debug-entry.warning {
+    border-left-color: #ffc107;
+    background-color: #fff3cd;
+}
+
+.debug-entry.error {
+    border-left-color: #dc3545;
+    background-color: #f8d7da;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6e6e6e;
+    margin-top: 20px;
+}
